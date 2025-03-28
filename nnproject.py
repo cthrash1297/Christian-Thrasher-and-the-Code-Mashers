@@ -21,6 +21,7 @@ totrans = transforms.Compose([
     transforms.ToTensor()
 ])
 #Converts each image to a grayscale tensor contining normalized pixel data and its associated label 0 - 6
+#Change the bit in quotation marks to wherever the files live on your machine
 train_data = datasets.ImageFolder(root = r"C:\Users\Christian\Desktop\Academics\Neural Networks\archive\train", transform = totrans)
 
 test_data = datasets.ImageFolder(root = r"C:\Users\Christian\Desktop\Academics\Neural Networks\archive\test", transform = totrans)
