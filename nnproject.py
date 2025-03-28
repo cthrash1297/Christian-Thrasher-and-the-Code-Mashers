@@ -54,6 +54,14 @@ model = nn.Sequential(
 train_loader = DataLoader(train_data,1000)
 test_loader = DataLoader(test_data,1000)
 
+
+#Much of this is heavily inspired by the DLI assignment for the sake of getting a baseline
+def get_batch_accuracy(output, y, N):
+    #It's OK to not normalize because we are looking for the highest value in the probability
+    #vector y output by the model
+    pred = output.argmax(dim=1, keepdim=True)
+    correct = pred.eq(y.view_as(pred)).sum().item()
+    return correct / N
 #Defining the loss function. Cross entropy loss most appropriate for image classification using an imbalanced set
 loss_function = nn.CrossEntropyLoss()
 def validate():
