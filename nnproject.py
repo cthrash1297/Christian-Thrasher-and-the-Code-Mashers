@@ -114,10 +114,6 @@ model = nn.Sequential(
 # print(train_data[0])
 # print(test)
 
-train_loader = DataLoader(train_data,1000)
-test_loader = DataLoader(test_data,1000)
-
-
 
 #Much of this is heavily inspired by the DLI assignment for the sake of getting a baseline
 def get_batch_accuracy(output, y, N):
